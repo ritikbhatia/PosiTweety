@@ -64,7 +64,7 @@ function Viz(){
       />{' '}
       Posi<span style={{color:'#5f85db'}}>tweet</span>y
     </Navbar.Brand>
-    <Navbar.Brand className="justify-content-end">Know your #Tag</Navbar.Brand>
+    <Navbar.Text className="justify-content-end">Know your #Tag</Navbar.Text>
   </Navbar>
             {/* <h1 style={{color:'#5f85db'}}>Know your #Tag</h1> */}
             <h3>AIDS</h3>
