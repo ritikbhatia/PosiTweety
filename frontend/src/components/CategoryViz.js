@@ -1,27 +1,16 @@
 import * as React from "react";
-import { render } from "react-dom";
 import { Chart } from "react-google-charts";
 import HASHDATA from '../assets/hashData';
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-// import { AnimatedList } from 'react-animated-list';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Logo from '../assets/help.svg';
 import { Navbar } from "react-bootstrap";
 
-// function returnList(){
-//     return (
-//         <div>
-            
-//         </div>
-// }
-
 function getRandomColor() {
     var color = '#'
     var colorArr = ['f4f1de','e07a5f','3d405b','81b29a','f2cc8f','006d77','83c5be','ffddd2','e29578']
-    var color = color+ colorArr[Math.floor(Math.random() * colorArr.length)]
+    color = color+ colorArr[Math.floor(Math.random() * colorArr.length)]
     return color;
   }
 
@@ -40,7 +29,7 @@ function Viz(){
     var relatedDict = HASHDATA['AIDS'].relatedDict;
     var relatedData = [['Hashtag','Hits']];
     for(let [key, value] of Object.entries(relatedDict)){
-        var mylist = [key,value]
+        mylist = [key,value]
         relatedData.push(mylist)
     }
 

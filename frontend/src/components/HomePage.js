@@ -1,24 +1,12 @@
-import { ForceGraph2D, ForceGraph3D, ForceGraphVR, ForceGraphAR } from 'react-force-graph';
+import { ForceGraph3D } from 'react-force-graph';
 import { useRef, useCallback } from 'react';
 import DATA from '../assets/hashMap';
 import SpriteText from 'three-spritetext';
-// import {Jumbotron,Button,Container,Row,Col,} from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import logo from '../assets/help.svg';
-// import { MDBCol, MDBFormInline, MDBIcon } from "mdbreact";
-// import React from "react";
-// import { MDBCol, MDBFormInline, MDBBtn } from "mdbreact";
 import SearchPage from './SearchPage';
-// import '../node_modules/react-vis/dist/style.css';
-// import {XYPlot, LineSeries} from 'react-vis';
-import {
-  XYPlot,
-  LineSeries,
-  DiscreteColorLegend
-} from "react-vis";
 import ListGroup from 'react-bootstrap/ListGroup';
 
 function makeRandomColor(){
@@ -33,16 +21,11 @@ const colorgroup = [];
       var mycolor = makeRandomColor();
       colorgroup.push(mycolor);
     }
-// function returnColor(n){
-//   return colorgroup[n-1];
-// }
 
 
-function FocusGraph() {
+export function FocusGraph() {
     const fgRef = useRef();
     
-    // conso(colorgroup);
-
     const handleClick = useCallback(node => {
     // Aim at node from outside it
     const distance = 40;
@@ -179,6 +162,3 @@ function FocusGraph() {
 {/* </Container> */}
 </div>);
 };
-
-
-export default FocusGraph;
