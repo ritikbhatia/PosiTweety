@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tweet } from 'react-twitter-widgets'
+import { Tweet } from 'react-twitter-widgets';
 import { Spinner } from 'react-bootstrap';
 
 export class Tweets extends React.Component {

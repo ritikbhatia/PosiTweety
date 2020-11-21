@@ -1,12 +1,26 @@
 import React from "react";
 import { List, Grid, Container, Header, Image } from "semantic-ui-react";
+import {Card,Button}from 'react-bootstrap';
+
+const styles = {
+  card: {
+      overflow: "hidden",
+      borderRadius: 40,
+  },
+  cardImage: {
+      width: "250px",
+      margin: "auto",
+      height: "250px",
+      borderRadius: 55
+  }
+}
 
 const ArticleItem = props => {
   const { article } = props;
   return (
     <List.Item style={{ padding: 30 }}>
       <Grid>
-        <Grid.Column
+        {/* <Grid.Column
           width={11}
           style={{
             display: "flex",
@@ -27,7 +41,26 @@ const ArticleItem = props => {
         </Grid.Column>
         <Grid.Column width={5}>
           <Image src={article.urlToImage} height="400px" width="900px" />
-        </Grid.Column>
+        </Grid.Column> */}
+        <Grid.Column
+          width={11}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start"
+          }}
+        >
+        <Card style={styles.card}>
+  <Card.Img variant="top" src={article.urlToImage} />
+  <Card.Body>
+    <Card.Title>{article.title}</Card.Title>
+    <Card.Text>
+    {article.description}
+    </Card.Text>
+    <Button variant="secondary" on> <center>Go to <Card.Link to={article.url}>{article.source.name}</Card.Link></center></Button>
+  </Card.Body>
+</Card>
+</Grid.Column>
       </Grid>
     </List.Item>
   );
@@ -79,7 +112,7 @@ export class News extends React.Component {
       totalResults,
     } = this.state;
     return (
-      <Container>
+      <Container >
         {loading && (
           <p style={{ textAlign: "center" }}>Searching for articles...</p>
         )}
