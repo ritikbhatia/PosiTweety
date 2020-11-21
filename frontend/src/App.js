@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import '../node_modules/react-vis/dist/style.css';
 import FocusGraph from './components/HomePage';
 
 class App extends Component {
