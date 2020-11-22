@@ -8,6 +8,7 @@ import Logo from '../assets/help.svg';
 import { Navbar } from "react-bootstrap";
 import queryString from 'query-string';
 import {Link} from 'react-router-dom';
+import Badge from 'react-bootstrap/Badge';
 
 const styles = {
   listGroup: {
@@ -70,11 +71,11 @@ function Viz(){
               <Navbar.Text className="justify-content-end">Know your #Tag</Navbar.Text>
           </Navbar>
           <br/>
-          <h1><center>Your category: <span style={{color:'green'}}>{category}</span></center></h1>
+          <h1><center><Badge variant="dark">Your category: <span style={{color:'white'}}>{category}</span></Badge></center></h1>
           <br/><br/>
           <Row>
             <Col>
-            <h4><center>Visual #Board</center></h4>
+            <h2><center><Badge variant="dark">Visual #Board</Badge></center></h2>
             <Chart
               style={{margin: "auto"}}
               width={'500px'}
@@ -87,6 +88,9 @@ function Viz(){
                 is3D: true
               }}
             />
+            <br></br>
+            <br></br>
+            <br></br>
             <br></br>
 
           <Chart
@@ -107,7 +111,7 @@ function Viz(){
         </Col>
 
         <Col>
-        <h4><center>Recommended #Tags</center></h4>
+        <h2><center><Badge variant="dark">Recommended #Tags</Badge></center></h2>
         <ListGroup style={styles.listGroup} class="list-group">
                       {p1.map(item => (
                           <ListGroup.Item style={{"backgroundColor":getRandomColor()}}>
@@ -120,7 +124,7 @@ function Viz(){
         
         <br/>
 
-        <h4><center>Some other topics to consider!</center></h4>
+        <h2><center><Badge variant="dark">Some other topics to consider!</Badge></center></h2>
         <ListGroup style={styles.listGroup} class="list-group">
                       {p2.map(item => (
                           <ListGroup.Item style={{"backgroundColor":getRandomColor()}}>
