@@ -1,4 +1,4 @@
-import { Card, Row, Col} from 'react-bootstrap';
+import { Card, Row, Col,Container} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import info from '../assets/information.png';
@@ -36,7 +36,9 @@ export class Home extends React.Component {
                 <div>
                     <NavigationBar />
                 </div>
-                <Row className="m-5">
+                <br></br>
+                <Container>
+                <Row>
                     <Col>
                         <Card style={styles.card} >
                             <Card.Img variant="top" style={styles.cardImage} src={info} />
@@ -80,7 +82,8 @@ export class Home extends React.Component {
                         </Card>
                     </Col>
                 </Row>
-                <Row className="m-5">
+                <br></br>
+                <Row>
                     <Col>
                         <Card style={styles.card}>
                             <Card.Img variant="top" style={styles.cardImage} src={news} />
@@ -110,6 +113,8 @@ export class Home extends React.Component {
                         </Card>
                     </Col>
                 </Row>
+                </Container>
+                <br></br>
             </div>
         );
     }

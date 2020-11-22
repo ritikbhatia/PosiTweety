@@ -10,6 +10,7 @@ import { SearchPage } from './SearchPage';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const styles = {
   listGroup: {
@@ -83,46 +84,46 @@ export function FocusGraph() {
   <Row>
     <Col sm>
       <ListGroup style={styles.listGroup} horizontal>
-        <ListGroup.Item><Link to="/stats?category=Ageing">Ageing</Link></ListGroup.Item>
-        <ListGroup.Item><Link to="/stats?category=AIDS">AIDS</Link></ListGroup.Item>
-        <ListGroup.Item><Link to="/stats?category=climatechange">Climate Change</Link></ListGroup.Item>
-        <ListGroup.Item><Link to="/stats?category=helpchildren">Children</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'red'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=Ageing">Ageing</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'pink'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=AIDS">AIDS</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'#b9cc0e'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=climatechange">Climate Change</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'#f5b042'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=helpchildren">Children</Link></ListGroup.Item>
       </ListGroup>
     </Col>
 
     <Col sm>
         <ListGroup style={styles.listGroup} horizontal>
-          <ListGroup.Item><Link to="/stats?category=decolonization">Decolonization</Link></ListGroup.Item>
-          <ListGroup.Item><Link to="/stats?category=democracy">Democracy</Link></ListGroup.Item>
-          <ListGroup.Item><Link to="/stats?category=equality">Equality</Link></ListGroup.Item>
-          <ListGroup.Item><Link to="/stats?category=health">Health</Link></ListGroup.Item>
+          <ListGroup.Item style={{'backgroundColor':'#84a2f0'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=decolonization">Decolonization</Link></ListGroup.Item>
+          <ListGroup.Item style={{'backgroundColor':'#5ac8ed'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=democracy">Democracy</Link></ListGroup.Item>
+          <ListGroup.Item style={{'backgroundColor':'#248a45'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=equality">Equality</Link></ListGroup.Item>
+          <ListGroup.Item style={{'backgroundColor':'#3197e0'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=health">Health</Link></ListGroup.Item>
         </ListGroup>
     </Col>
 
     <Col sm>
       <ListGroup style={styles.listGroup} horizontal>
-        <ListGroup.Item><Link to="/stats?category=humanrights">Human Rights</Link></ListGroup.Item>
-        <ListGroup.Item><Link to="/stats?category=hunger">Hunger</Link></ListGroup.Item>
-        <ListGroup.Item><Link to="/stats?category=internationallaw">International Law</Link></ListGroup.Item>
-        <ListGroup.Item><Link to="/stats?category=migration">Migration</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'#06c26d'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=humanrights">Human Rights</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'#ba6e04'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=hunger">Hunger</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'#070bed'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=internationallaw">International Law</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'#f7aa02'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=migration">Migration</Link></ListGroup.Item>
       </ListGroup>
     </Col>
 
     <Col sm>    
       <ListGroup style={styles.listGroup} horizontal>
-        <ListGroup.Item><Link to="/stats?category=nonprofit">Non Profit</Link></ListGroup.Item>
-        <ListGroup.Item><Link to="/stats?category=nuclearenergy">Nuclear Energy</Link></ListGroup.Item>
-        <ListGroup.Item><Link to="/stats?category=population">Population</Link></ListGroup.Item>
-        <ListGroup.Item><Link to="/stats?category=humanrights">Poverty</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'#f79502'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=nonprofit">Non Profit</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'#d14747'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=nuclearenergy">Nuclear Energy</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'#ede47b'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=population">Population</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'#caace8'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=humanrights">Poverty</Link></ListGroup.Item>
       </ListGroup>
     </Col>
 
     <Col sm>
       <ListGroup style={styles.listGroup} horizontal>
-        <ListGroup.Item><Link to="/stats?category=refugees">Refugees</Link></ListGroup.Item>
-        <ListGroup.Item><Link to="/stats?category=socialgood">Social Good</Link></ListGroup.Item>
-        <ListGroup.Item><Link to="/stats?category=sustainability">Sustainability</Link></ListGroup.Item>
-        <ListGroup.Item><Link to="/stats?category=worldpeace">World Peace</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'#edbbe6'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=refugees">Refugees</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'#f09d05'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=socialgood">Social Good</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'#8c560f'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=sustainability">Sustainability</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'#f0c881'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=worldpeace">World Peace</Link></ListGroup.Item>
       </ListGroup>
     </Col>
   </Row>

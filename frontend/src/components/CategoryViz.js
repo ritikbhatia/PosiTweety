@@ -87,6 +87,7 @@ function Viz(){
                 is3D: true
               }}
             />
+            <br></br>
 
           <Chart
             style={{margin: "auto"}}
