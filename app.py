@@ -34,7 +34,7 @@ def getInfo():
 @app.route("/media")
 def getMedia():
     topic = request.args.get("topic", default = "", type = str)
-    tweets = [tweet for tweet in tweepy.Cursor(api.search, q = topic+" filter:media", result_type="popular").items(10)]
+    tweets = [tweet for tweet in tweepy.Cursor(api.search, q = topic+" filter:media", result_type="popular").items(100)]
     images = []
     for tweet in tweets:
         if 'media' in tweet.entities:
@@ -55,23 +55,3 @@ def getResources():
                 resources.append(url)
     
     return jsonify({"resources": resources})
-
-# @app.route("/geojson")
-# def getgeoJson():
-#     # first extract tweets
-#     topic = request.args.get("topic", default = "", type = str)
-#     tweets = [tweet for tweet in tweepy.Cursor(api.search, q = topic, result_type="popular").items(10000)]
-
-#     countries = {}
-
-#     for tweet in tweets:
-#         location = tweet.user.location.split(',')
-#         country = location[len(location)-1].strip()
-#         if country not in countries:
-#             countries[country] = 1
-#         else:
-#             countries[country] += 1
-    
-#     print(countries)
-    
-#     return jsonify(countries)

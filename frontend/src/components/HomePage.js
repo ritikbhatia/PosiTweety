@@ -6,8 +6,18 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import logo from '../assets/help.svg';
-import SearchPage from './SearchPage';
+import { SearchPage } from './SearchPage';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+const styles = {
+  listGroup: {
+      overflow: "hidden",
+      padding: "15px",
+      textAlign: "center"
+  },
+}
 
 function makeRandomColor(){
   var c = '';
@@ -16,15 +26,17 @@ function makeRandomColor(){
   }
   return '#'+c;
 }
+
 const colorgroup = [];
-    for(var i=1;i<=20;i++){
-      var mycolor = makeRandomColor();
-      colorgroup.push(mycolor);
-    }
+for(var i=1;i<=20;i++){
+  var mycolor = makeRandomColor();
+  colorgroup.push(mycolor);
+}
 
 
 export function FocusGraph() {
     const fgRef = useRef();
+    const history = useHistory();
     
     const handleClick = useCallback(node => {
     // Aim at node from outside it
@@ -36,129 +48,101 @@ export function FocusGraph() {
         node, // lookAt ({ x, y, z })
         3000  // ms transition duration
     );
+
     }, [fgRef]);
+
+    const openLink = (node) => history.push('/dashboard?topic='+node.id.substring(1))
+
     return (
-        <div style={{"backgroundColor":"#525252"}}>
-       
-<Container>
-        
-     <Row>
-    {/* <img src={logo} style={{width: '20%', height: '20%'}}/> */}
-    <Col sm style={{height:'100%'}}>
-      <br></br> 
-    <img src={logo} style={{width: '20%', height: '20%'}}/>
-      <h1 style={{color:'white'}}>Posi<span style={{color:'#5f85db'}}>tweet</span>y</h1></Col>
-    <Col sm style={{height:'100%'}}>
-      <br></br>
-      <br></br>
-   
-      
-      <h3 style={{color:'white'}}>Welcome to the <span style={{color:'#5f85db'}}>#SocialNetwork"</span> for good!</h3>
-      <h6 style={{color:'white'}}><span style={{color:'green'}}>#Learn</span> more, spread <span style={{color:'red'}}>#Love</span> and do <span style={{color:'yellow'}}>#Good</span> with our hack.</h6>
-      {/* <p style={{color:'white'}}>Search for a topic</p>
-       */}
-       
-      <p style={{color:'white'}}>Check out our <span style={{color:'#5f85db'}}>#Map</span> below:</p>
-      {/* <Button href="https://intuitionv6.devpost.com/project-gallery" variant="outline-info" size="lg">View past submissions here</Button>{' '} */}
-    
+    <div style={{backgroundColor:"black", overflowX: "hidden"}}>
+    <Container>
+      <Row>
+        {/* <img src={logo} style={{width: '20%', height: '20%'}}/> */}
+        <Col sm style={{height:'100%'}}>
+          <br></br>
+          <center>
+            <img src={logo} style={{margin: "auto", width: '30%', height: '30%'}}/>
+            <h1 style={{color:'white'}}>Posi<span style={{color:'#5f85db'}}>tweet</span>y</h1>
+          </center> 
+        </Col>
+        <Col sm style={{height:'100%'}}>
+          <br></br>
+          <br></br>
+  
+          <h4 style={{color:'white'}}>Welcome to the <span style={{color:'#5f85db'}}>#SocialNetwork"</span> for good!</h4>
+          <br/>
+          <h6 style={{color:'white'}}><span style={{color:'green'}}>#Learn</span> more, spread <span style={{color:'orange'}}>#Love</span> and do <span style={{color:'yellow'}}>#Good</span> with our hack!</h6>        
+        </Col>
+      </Row>
+    </Container>
+  
+  <br></br>
+  <SearchPage></SearchPage>
+  <br/><br/>
+  <h4 style={{color:'white'}}><center> Or choose one of the categories below to explore:</center></h4>
+  <Row>
+    <Col sm>
+      <ListGroup style={styles.listGroup} horizontal>
+        <ListGroup.Item><Link to="/stats?category=Ageing">Ageing</Link></ListGroup.Item>
+        <ListGroup.Item><Link to="/stats?category=AIDS">AIDS</Link></ListGroup.Item>
+        <ListGroup.Item><Link to="/stats?category=climatechange">Climate Change</Link></ListGroup.Item>
+        <ListGroup.Item><Link to="/stats?category=helpchildren">Children</Link></ListGroup.Item>
+      </ListGroup>
+    </Col>
+
+    <Col sm>
+        <ListGroup style={styles.listGroup} horizontal>
+          <ListGroup.Item><Link to="/stats?category=decolonization">Decolonization</Link></ListGroup.Item>
+          <ListGroup.Item><Link to="/stats?category=democracy">Democracy</Link></ListGroup.Item>
+          <ListGroup.Item><Link to="/stats?category=equality">Equality</Link></ListGroup.Item>
+          <ListGroup.Item><Link to="/stats?category=health">Health</Link></ListGroup.Item>
+        </ListGroup>
+    </Col>
+
+    <Col sm>
+      <ListGroup style={styles.listGroup} horizontal>
+        <ListGroup.Item><Link to="/stats?category=humanrights">Human Rights</Link></ListGroup.Item>
+        <ListGroup.Item><Link to="/stats?category=hunger">Hunger</Link></ListGroup.Item>
+        <ListGroup.Item><Link to="/stats?category=internationallaw">International Law</Link></ListGroup.Item>
+        <ListGroup.Item><Link to="/stats?category=migration">Migration</Link></ListGroup.Item>
+      </ListGroup>
+    </Col>
+
+    <Col sm>    
+      <ListGroup style={styles.listGroup} horizontal>
+        <ListGroup.Item><Link to="/stats?category=nonprofit">Non Profit</Link></ListGroup.Item>
+        <ListGroup.Item><Link to="/stats?category=nuclearenergy">Nuclear Energy</Link></ListGroup.Item>
+        <ListGroup.Item><Link to="/stats?category=population">Population</Link></ListGroup.Item>
+        <ListGroup.Item><Link to="/stats?category=humanrights">Poverty</Link></ListGroup.Item>
+      </ListGroup>
+    </Col>
+
+    <Col sm>
+      <ListGroup style={styles.listGroup} horizontal>
+        <ListGroup.Item><Link to="/stats?category=refugees">Refugees</Link></ListGroup.Item>
+        <ListGroup.Item><Link to="/stats?category=socialgood">Social Good</Link></ListGroup.Item>
+        <ListGroup.Item><Link to="/stats?category=sustainability">Sustainability</Link></ListGroup.Item>
+        <ListGroup.Item><Link to="/stats?category=worldpeace">World Peace</Link></ListGroup.Item>
+      </ListGroup>
     </Col>
   </Row>
- 
-    </Container>
-    <br></br>
-    {/* <SearchPage></SearchPage> */}
-    
-    <ForceGraph3D
+
+  <br/><br/>
+  <h4 style={{color:'white'}}><center>Or check out our <span style={{color:'#5f85db'}}>#Map</span> below:</center></h4>
+  <ForceGraph3D
     ref={fgRef}
     graphData={DATA}
     // nodeLabel="id"
     nodeThreeObject={node => {
         const sprite = new SpriteText(node.id);
         sprite.color = node.color;
-          // console.log(node.group);
-          // console.log(node.color);
         sprite.textHeight = 8;
         return sprite;
       }}
     nodeAutoColorBy="group"
-    // nodeColor= returnColo
     nodeval="40"
-    onNodeClick={handleClick}
-    // linkAutoColorBy={d => DATA.nodes.id}
-    // linkWidth={2}
-    // backgroundColor="8ecae6"
-/>
-{/* <Container> */}
-
-  <h3 style={{color:'white'}}>Legend</h3>
-  <Row>
-    <Col sm>
-  {/* <Container> */}
-    
-  <ListGroup horizontal>
-  <ListGroup.Item>Ageing</ListGroup.Item>
-  <ListGroup.Item>AIDS</ListGroup.Item>
-  <ListGroup.Item>Climate Change</ListGroup.Item>
-  <ListGroup.Item>Children</ListGroup.Item>
-  
-</ListGroup>
-
-{/* </Container> */}
-</Col>
-<Col sm>
-  {/* <Container> */}
-    
-  <ListGroup horizontal>
-  <ListGroup.Item>Decolonization</ListGroup.Item>
-  <ListGroup.Item>Democracy</ListGroup.Item>
-  <ListGroup.Item>Equality</ListGroup.Item>
-  <ListGroup.Item>Health</ListGroup.Item>
-  
-</ListGroup>
-
-{/* </Container> */}
-</Col>
-<Col sm>
-  {/* <Container> */}
-    
-  <ListGroup horizontal>
-  <ListGroup.Item >Human Rights</ListGroup.Item>
-  <ListGroup.Item>Hunger</ListGroup.Item>
-  <ListGroup.Item>International Law</ListGroup.Item>
-  <ListGroup.Item>Migration</ListGroup.Item>
-  
-</ListGroup>
-
-{/* </Container> */}
-</Col>
-<Col sm>
-  {/* <Container> */}
-    
-  <ListGroup horizontal>
-  <ListGroup.Item>Non Profit</ListGroup.Item>
-  <ListGroup.Item>Nuclear Energy</ListGroup.Item>
-  <ListGroup.Item>Population</ListGroup.Item>
-  <ListGroup.Item>Poverty</ListGroup.Item>
-  
-</ListGroup>
-
-{/* </Container> */}
-</Col>
-<Col sm>
-  {/* <Container> */}
-    
-  <ListGroup horizontal>
-  <ListGroup.Item>Refugees</ListGroup.Item>
-  <ListGroup.Item>Social Good</ListGroup.Item>
-  <ListGroup.Item>Sustainability</ListGroup.Item>
-  <ListGroup.Item>World Peace</ListGroup.Item>
-  {/* <ListGroup.Item>Refugees</ListGroup.Item> */}
-</ListGroup>
-
-{/* </Container> */}
-</Col>
-</Row>
-  
-{/* </Container> */}
+    onNodeClick={openLink}
+    onNodeRightClick={handleClick}
+  />
 </div>);
 };

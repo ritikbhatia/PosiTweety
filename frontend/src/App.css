@@ -7,43 +7,44 @@
   height: 100% !important;
 }
 
-.searchbar{
+.searchbar {
   margin-bottom: auto;
   margin-top: auto;
   height: 60px;
   background-color: #353b48;
   border-radius: 30px;
   padding: 10px;
-  }
+  z-index: 1;
+}
 
-  .search_input{
+.search_input {
   color: white;
   border: 0;
   outline: 0;
   background: none;
   width: 0;
-  caret-color:transparent;
+  caret-color: transparent;
   line-height: 40px;
   transition: width 0.4s linear;
-  }
+}
 
-  .searchbar:hover > .search_input{
+.searchbar:hover > .search_input {
   padding: 0 10px;
   width: 300px;
-  caret-color:red;
+  caret-color: red;
   transition: width 0.4s linear;
-  }
+}
 
-  .searchbar:hover > .search_icon{
+.searchbar:hover > .search_icon {
   /* background: white; */
   color: #e74c3c;
-  }
+}
 
-.list-group{
+.list-group {
   max-height: 300px;
   margin-bottom: 10px;
-    overflow:scroll;
-    -webkit-overflow-scrolling: touch;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Position and sizing of burger button */
@@ -113,8 +114,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: rgba(0, 0, 0, 0.3);
 }
 
-.news-container{
-  background-image: radial-gradient(ellipse farthest-corner at 0 140%, #525252 0%, #534f4f 70%, #6b7279 70%);
+.news-container {
+  background-image: radial-gradient(
+    ellipse farthest-corner at 0 140%,
+    #525252 0%,
+    #534f4f 70%,
+    #6b7279 70%
+  );
   /* background-image:
   radial-gradient(at top left,#629a92 36%,#02d2a0 67%, #fff 11%);
   /* radial-gradient(at bottom right,#629a92 36%,#02d2a0 67%, #fff 11%); */
@@ -129,7 +135,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   margin-top: 50px;
   display: block;
   text-align: center;
-  line-height: 50px; */ 
+  line-height: 50px; */
 }
 
 #particle-canvas {
@@ -141,6 +147,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   z-index: 0;
 }
 
-.about-col{
+.about-col {
   width: 80%;
 }

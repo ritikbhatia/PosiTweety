@@ -1,10 +1,14 @@
 import React from 'react';
 import { Tweet } from 'react-twitter-widgets';
 import { Spinner } from 'react-bootstrap';
+import queryString from 'query-string';
+import { NavigationBar } from './Navigationbar';
 
 export class Tweets extends React.Component {
     constructor(props) {
       super(props);
+
+      this.parameters = queryString.parse(this.props.location.search)
       
       this.options = {
         cards: "hidden",
@@ -21,7 +25,7 @@ export class Tweets extends React.Component {
     }
   
     componentDidMount() {
-      fetch("http://localhost:5000/tweets?topic=India",
+      fetch("http://localhost:5000/tweets?topic="+this.parameters.topic,
       {
         headers : { 
           'Accept': 'application/json'
@@ -55,6 +59,9 @@ export class Tweets extends React.Component {
       } else {
         return (
             <div>
+                <div>
+                  <NavigationBar />
+                </div>
                 <ul>
                   {tweets.map(item => (
                       <Tweet options={this.options} tweetId={item}/>

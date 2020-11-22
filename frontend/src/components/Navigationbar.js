@@ -10,10 +10,7 @@ export class NavigationBar extends React.Component{
     render() {
         return (
             <div>
-            <Container>
-
-            </Container>
-            <Navbar sticky="left" bg="dark" variant="dark" className="flex-column">
+            <Navbar sticky="top" bg="dark" variant="dark" className="flex-column">
                 <Navbar.Brand href="/">Dashboard</Navbar.Brand>
                 <Nav>
                     <Nav.Link as={Link} to="/dashboard/tweets">Tweets</Nav.Link>

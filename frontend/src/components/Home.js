@@ -5,6 +5,10 @@ import info from '../assets/information.png';
 import media from '../assets/media.png';
 import news from '../assets/news.png';
 import resource from '../assets/resource.png';
+import queryString from 'query-string';
+import { NavigationBar } from './Navigationbar';
+
+
 const styles = {
     card: {
         overflow: "hidden",
@@ -19,9 +23,19 @@ const styles = {
   }
 
 export class Home extends React.Component {
+
+    constructor(props){
+        super(props);
+        this.parameters = queryString.parse(this.props.location.search)
+        console.log(this.parameters.topic);
+    }
+
     render() {
         return (
-            <div className="m-5">
+            <div>
+                <div>
+                    <NavigationBar />
+                </div>
                 <Row className="m-5">
                     <Col>
                         <Card style={styles.card} >
@@ -33,7 +47,7 @@ export class Home extends React.Component {
                             </Card.Text>
                             </Card.Body>
                             <Card.Footer>
-                                <center>Go to <Card.Link as={Link} to="/dashboard/about">About</Card.Link></center>
+                                <center>Go to <Card.Link as={Link} to={"/dashboard/about?topic="+this.parameters.topic}>About</Card.Link></center>
                             </Card.Footer>
                         </Card>
                     </Col>
@@ -47,7 +61,7 @@ export class Home extends React.Component {
                             </Card.Text>
                             </Card.Body>
                             <Card.Footer>
-                                <center>Go to <Card.Link as={Link} to="/dashboard/tweets">PosiTweets</Card.Link></center>
+                                <center>Go to <Card.Link as={Link} to={"/dashboard/tweets?topic="+this.parameters.topic}>PosiTweets</Card.Link></center>
                             </Card.Footer>
                         </Card>
                     </Col>
@@ -61,12 +75,12 @@ export class Home extends React.Component {
                             </Card.Text>
                             </Card.Body>
                             <Card.Footer>
-                                <center>Go to <Card.Link as={Link} to="/dashboard/media">Media</Card.Link></center>
+                                <center>Go to <Card.Link as={Link} to={"/dashboard/media?topic="+this.parameters.topic}>Media</Card.Link></center>
                             </Card.Footer>
                         </Card>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="m-5">
                     <Col>
                         <Card style={styles.card}>
                             <Card.Img variant="top" style={styles.cardImage} src={news} />
@@ -77,7 +91,7 @@ export class Home extends React.Component {
                             </Card.Text>
                             </Card.Body>
                             <Card.Footer>
-                                <center>Go to <Card.Link as={Link} to="/dashboard/news">News</Card.Link></center>
+                                <center>Go to <Card.Link as={Link} to={"/dashboard/news?topic="+this.parameters.topic}>News</Card.Link></center>
                             </Card.Footer>
                         </Card>
                     </Col>
@@ -87,11 +101,11 @@ export class Home extends React.Component {
                             <Card.Body>
                             <Card.Title>Resources</Card.Title>
                             <Card.Text>
-                                Want to contribute to the NGO that tweeted? Want to explore more links and videos about this topic? Don't fret because our resources sections provides you with exactly this information! Go ahead and give it a look!
+                                Want to contribute to the NGO that tweeted? Want to explore more links and videos about this topic? Don't fret cause our resources sections provides you with exactly this information!
                             </Card.Text>
                             </Card.Body>
                             <Card.Footer>
-                                <center>Go to <Card.Link as={Link} to="/dashboard/resources">Resources</Card.Link></center>
+                                <center>Go to <Card.Link as={Link} to={"/dashboard/resources?topic="+this.parameters.topic}>Resources</Card.Link></center>
                             </Card.Footer>
                         </Card>
                     </Col>
