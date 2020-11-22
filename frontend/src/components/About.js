@@ -1,4 +1,6 @@
 import React from 'react';
+import { Card, Row, Col, Container} from 'react-bootstrap';
+import Jumbotron from 'react-bootstrap/Jumbotron'
 
 export class About extends React.Component {
     constructor(props) {
@@ -46,8 +48,18 @@ export class About extends React.Component {
         return <div>Loading...</div>;
       } else {
         return (
-          <div>
-            {about}
+          <div >
+            <Row>
+              <Col className="about-col">
+            <Jumbotron>
+  <Container>
+    <h1>Learn More, Help more!</h1>
+    {about}
+  </Container>
+</Jumbotron>
+</Col>
+</Row>
+            
           </div>
         );
       }
