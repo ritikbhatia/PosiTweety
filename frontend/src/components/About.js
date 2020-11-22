@@ -56,7 +56,7 @@ export class About extends React.Component {
         return (
           <div >
             <div>
-                <NavigationBar />
+                <NavigationBar topic={this.parameters.topic} />
             </div>
             <Row>
               <Col className="about-col">

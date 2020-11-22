@@ -50,7 +50,7 @@ export class Media extends React.Component {
         return (
             <div>
                 <div>
-                  <NavigationBar />
+                  <NavigationBar topic={this.parameters.topic} />
                 </div>
                 <ul>
                   {image_urls.map(item => (
