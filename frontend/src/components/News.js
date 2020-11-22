@@ -1,6 +1,9 @@
 import React from "react";
 import { List, Grid, Container, Header, Image } from "semantic-ui-react";
 import {Card,Button}from 'react-bootstrap';
+import queryString from 'query-string';
+import { NavigationBar } from './Navigationbar';
+
 
 const styles = {
   card: {
@@ -20,28 +23,6 @@ const ArticleItem = props => {
   return (
     <List.Item style={{ padding: 30 }}>
       <Grid>
-        {/* <Grid.Column
-          width={11}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start"
-          }}
-        >
-          <Header as="h3">{article.title}</Header>
-          <List.Description style={{ margin: "20px 0" }}>
-            {article.description}
-          </List.Description>
-          <List bulleted horizontal>
-            <List.Item>
-                Link to the article: <a href={article.url}>{article.source.name}</a>
-            </List.Item>
-            <List.Item> Date Published: {article.publishedAt.split("T")[0]}</List.Item>
-          </List>
-        </Grid.Column>
-        <Grid.Column width={5}>
-          <Image src={article.urlToImage} height="400px" width="900px" />
-        </Grid.Column> */}
         <Grid.Column
           width={11}
           style={{
@@ -81,6 +62,8 @@ export class News extends React.Component {
   constructor(props) {
     super(props);
 
+    this.parameters = queryString.parse(this.props.location.search)
+
     this.state = {
       articles: [],
       searchTopic: "",
@@ -93,11 +76,11 @@ export class News extends React.Component {
 
   componentDidMount(){
     fetch(
-      `https://newsapi.org/v2/everything?q=India&sortBy=popularity&language=en&apiKey=00c8d3561b9642528ce180bc37dac50e`
+      `https://newsapi.org/v2/everything?q=`+ this.parameters.topic +`&sortBy=popularity&language=en&apiKey=00c8d3561b9642528ce180bc37dac50e`
     )
     .then(res => res.json())
     .then(result => this.setState({
-      searchTopic: "India",
+      searchTopic: this.parameters.topic,
       articles: result.articles,
       totalResults: result.totalResults
     }));
@@ -112,18 +95,23 @@ export class News extends React.Component {
       totalResults,
     } = this.state;
     return (
-      <Container >
-        {loading && (
-          <p style={{ textAlign: "center" }}>Searching for articles...</p>
-        )}
-        {articles.length > 0 && (
-          <Header as="h4" style={{ textAlign: "center", margin: 20 }}>
-            Found {totalResults} articles on "{searchTopic}"
-          </Header>
-        )}
-        {articles.length > 0 && <ArticleList articles={articles} />}
-        {apiError && <p>Could not fetch any articles. Please try again.</p>}
-      </Container>
+      <div>
+        <div>
+            <NavigationBar />
+        </div>
+        <Container >
+          {loading && (
+            <p style={{ textAlign: "center" }}>Searching for articles...</p>
+          )}
+          {articles.length > 0 && (
+            <Header as="h4" style={{ textAlign: "center", margin: 20 }}>
+              Found {totalResults} articles on "{searchTopic}"
+            </Header>
+          )}
+          {articles.length > 0 && <ArticleList articles={articles} />}
+          {apiError && <p>Could not fetch any articles. Please try again.</p>}
+        </Container>
+      </div>
     );
   }
 }

@@ -1,10 +1,16 @@
 import React from 'react';
 import { Card, Row, Col, Container} from 'react-bootstrap';
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import queryString from 'query-string';
+import { NavigationBar } from './Navigationbar';
+
 
 export class About extends React.Component {
     constructor(props) {
       super(props);
+
+      this.parameters = queryString.parse(this.props.location.search)
+
       this.state = {
         error: null,
         isLoaded: false,
@@ -13,7 +19,7 @@ export class About extends React.Component {
     }
   
     componentDidMount() {
-      fetch("http://localhost:5000/about?topic=India",
+      fetch("http://localhost:5000/about?topic="+this.parameters.topic,
       {
         headers : { 
           'Accept': 'application/json'
@@ -49,16 +55,19 @@ export class About extends React.Component {
       } else {
         return (
           <div >
+            <div>
+                <NavigationBar />
+            </div>
             <Row>
               <Col className="about-col">
             <Jumbotron>
-  <Container>
-    <h1>Learn More, Help more!</h1>
-    {about}
-  </Container>
-</Jumbotron>
-</Col>
-</Row>
+            <Container>
+              <h1>Learn More, Help more!</h1>
+              {about}
+            </Container>
+          </Jumbotron>
+          </Col>
+          </Row>
             
           </div>
         );

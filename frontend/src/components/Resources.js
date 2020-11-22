@@ -1,10 +1,13 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
-
+import queryString from 'query-string';
+import { NavigationBar } from './Navigationbar';
 
 export class Resources extends React.Component {
     constructor(props) {
       super(props);
+
+      this.parameters = queryString.parse(this.props.location.search)
 
       this.state = {
         error: null,
@@ -14,7 +17,7 @@ export class Resources extends React.Component {
     }
   
     componentDidMount() {
-      fetch("http://localhost:5000/resources?topic=India",
+      fetch("http://localhost:5000/resources?topic="+this.parameters.topic,
       {
         headers : { 
           'Accept': 'application/json'
@@ -48,6 +51,9 @@ export class Resources extends React.Component {
       } else {
         return (
             <div>
+                <div>
+                    <NavigationBar />
+                </div>
                 <ul>
                   {resources.map(item => (
                       <li>
