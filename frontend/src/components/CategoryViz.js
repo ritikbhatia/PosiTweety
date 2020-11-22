@@ -88,7 +88,7 @@ function Viz(){
                 is3D: true
               }}
             />
-            <br></br>
+
             <br></br>
             <br></br>
             <br></br>
@@ -126,14 +126,14 @@ function Viz(){
 
         <h2><center><Badge variant="dark">Some other topics to consider!</Badge></center></h2>
         <ListGroup style={styles.listGroup} class="list-group">
-                      {p2.map(item => (
-                          <ListGroup.Item style={{"backgroundColor":getRandomColor()}}>
-                            <Link to={"/dashboard?topic="+item.substring(1)}>
-                              {item}
-                            </Link>
-                          </ListGroup.Item>
-                      ))}
-                    </ListGroup>
+          {p2.map(item => (
+              <ListGroup.Item style={{"backgroundColor":getRandomColor()}}>
+                <Link to={"/dashboard?topic="+item.substring(1)}>
+                  {item}
+                </Link>
+              </ListGroup.Item>
+          ))}
+        </ListGroup>
         </Col>
       </Row>
     </div>

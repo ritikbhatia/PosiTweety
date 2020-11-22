@@ -106,7 +106,7 @@ export function FocusGraph() {
       <ListGroup style={styles.listGroup} horizontal>
         <ListGroup.Item style={{'backgroundColor':'#06c26d'}}><Link style={{ textDecoration: 'none',color:'black' }} to="/stats?category=humanrights">Human Rights</Link></ListGroup.Item>
         <ListGroup.Item style={{'backgroundColor':'#ba6e04'}}><Link style={{ textDecoration: 'none',color:'black' }} to="/stats?category=hunger">Hunger</Link></ListGroup.Item>
-        <ListGroup.Item style={{'backgroundColor':'#070bed'}}><Link style={{ textDecoration: 'none',color:'black' }} to="/stats?category=internationallaw">International Law</Link></ListGroup.Item>
+        <ListGroup.Item style={{'backgroundColor':'#070bed'}}><Link style={{ textDecoration: 'none',color:'white' }} to="/stats?category=internationallaw">International Law</Link></ListGroup.Item>
         <ListGroup.Item style={{'backgroundColor':'#f7aa02'}}><Link style={{ textDecoration: 'none',color:'black' }} to="/stats?category=migration">Migration</Link></ListGroup.Item>
       </ListGroup>
     </Col>

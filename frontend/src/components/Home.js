@@ -34,7 +34,7 @@ export class Home extends React.Component {
         return (
             <div>
                 <div>
-                    <NavigationBar />
+                    <NavigationBar topic={this.parameters.topic} />
                 </div>
                 <br></br>
                 <Container>

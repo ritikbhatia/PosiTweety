@@ -1,13 +1,20 @@
 import React from 'react';
-import { Spinner } from 'react-bootstrap';
-import queryString from 'query-string';
-import { NavigationBar } from './Navigationbar';
+import { ListGroup } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+
+const styles = {
+  listGroup: {
+      overflowX: "hidden",
+      padding: "20px",
+  }
+}
 
 export class Resources extends React.Component {
     constructor(props) {
       super(props);
 
-      this.parameters = queryString.parse(this.props.location.search)
+      // this.parameters = queryString.parse(this.props.location.search)
+      this.topic = this.props.topic;
 
       this.state = {
         error: null,
@@ -17,7 +24,7 @@ export class Resources extends React.Component {
     }
   
     componentDidMount() {
-      fetch("http://localhost:5000/resources?topic="+this.parameters.topic,
+      fetch("http://localhost:5000/resources?topic="+this.topic,
       {
         headers : { 
           'Accept': 'application/json'
@@ -46,22 +53,17 @@ export class Resources extends React.Component {
       const { error, isLoaded, resources } = this.state;
       if (error) {
         return <div>Error: {error.message}</div>;
-      } else if (!isLoaded) {
-        return <div><Spinner animation="border" variant="primary" style={{left: '50%', top: '50%', position:'absolute'}} />.</div>;
       } else {
-        return (
-            <div>
-                <div>
-                    <NavigationBar />
-                </div>
-                <ul>
-                  {resources.map(item => (
-                      <li>
-                          {item}
-                      </li>
-                  ))}
-                </ul>
-            </div>
+        return(
+          <ListGroup style={styles.listGroup}>
+            {resources.map(item => (
+                <a href={item}>
+                  <ListGroup.Item action variant="success">
+                      {item}
+                  </ListGroup.Item>
+                </a>
+            ))}
+          </ListGroup>
         );
       }
     }

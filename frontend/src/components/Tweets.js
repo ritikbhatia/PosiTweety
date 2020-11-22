@@ -1,8 +1,9 @@
 import React from 'react';
 import { Tweet } from 'react-twitter-widgets';
-import { Spinner } from 'react-bootstrap';
+import { Spinner, Col, Row } from 'react-bootstrap';
 import queryString from 'query-string';
 import { NavigationBar } from './Navigationbar';
+import { Resources } from './Resources';
 
 export class Tweets extends React.Component {
     constructor(props) {
@@ -19,7 +20,7 @@ export class Tweets extends React.Component {
 
       this.state = {
         error: null,
-        isLoaded: false,
+        isLoaded: true,
         tweets: []
       };
     }
@@ -60,13 +61,20 @@ export class Tweets extends React.Component {
         return (
             <div>
                 <div>
-                  <NavigationBar />
+                  <NavigationBar topic={this.parameters.topic} />
                 </div>
-                <ul>
-                  {tweets.map(item => (
-                      <Tweet options={this.options} tweetId={item}/>
-                  ))}
-                </ul>
+                <Row>
+                  <Col xs={4}>
+                    <ul>
+                      {tweets.map(item => (
+                          <Tweet options={this.options} tweetId={item}/>
+                      ))}
+                    </ul>
+                  </Col>
+                  <Col xs={8}>
+                    <Resources topic={this.parameters.topic} />
+                  </Col>
+                </Row>
             </div>
         );
       }

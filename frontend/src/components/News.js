@@ -97,7 +97,7 @@ export class News extends React.Component {
     return (
       <div>
         <div>
-            <NavigationBar />
+            <NavigationBar topic={this.parameters.topic} />
         </div>
         <Container >
           {loading && (
