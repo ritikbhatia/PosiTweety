@@ -2,9 +2,9 @@
 
 ## Inspiration
 
-Hiya PosiTweeps! **We would like our app, _Positweety_ to take part in the “Social Good” category** and here is our inspiration as to why. 
+Hiya PosiTweeps! **We would like our app, _PosiTweety_ to take part in the “Social Good” category** and here is our inspiration as to why. 
 
-In our quest to do something socially useful, we found it _unusually difficult to find relevant topics_ and were _limited by our knowledge about current events_. This was further reinforced by the fact that “hot” topics such as entertainment, sports and politics often dwarf other “Socially impactful” one’s.
+In our quest to do something socially useful, we found it _unusually difficult to find relevant topics_ and were _limited by our knowledge about current events_. This was further reinforced by the fact that “hot” topics such as entertainment, sports and politics often dwarf other “Socially impactful” ones.
  
 Thus, we decided to make a **_one-stop solution_** that will help _spread awareness and knowledge about various global issues_. We realised that if the people as a whole work towards making a change, anything is possible. For that to happen, people need to be aware of the latest trends and topics in “Social Good” before they can contribute to it. We thought the best way for us to do social good is to _provide a platform which generates awareness and empowers others to do the same_.
  
@@ -15,11 +15,11 @@ Thus came our inspiration for Positweety, a software which lets users **_explore
 ## What it does
 
 * Positweety provides _mesmerizing visuals_, _3D networks_, _interactive dashboards_ and _dynamic analytics_ to spread awareness and learn more about different topics.
-It uses issues **[laid out by the UN]** (https://www.un.org/en/sections/issues-depth/global-issues-overview/) to scrape data from the internet for over 20 of the most impactful categories impacting the society today.
+It uses issues **[laid out by the UN]** (https://www.un.org/en/sections/issues-depth/global-issues-overview/) to scrape data from the internet for over 20 of the most impactful categories in the society today.
  
-* Using these categories, it _scrapes the internet_ to find the _most relevant hashtags_ for each category and group them together. It also _generates analytical data_ which like the number of hits per hashtag and the distribution of usage for the top hashtags in the category. 
+* Using these categories, it _scrapes the internet_ to find the _most relevant hashtags_ for each category and group them together. It also _generates analytical data_ like the number of hits per hashtag and the distribution of usage for the top hashtags in the category. 
 
-* Positweety makes it _fun to learn and explore_ about social impactful topics. It does this by generating a **#Map** : A beautiful, dynamic and interactive 3D network of the Hashtags and color coded based on the category to which they belong!
+* PosiTweety makes it _fun to learn and explore_ about socially relevant topics. It does this by generating a **#Map** : A beautiful, dynamic and interactive 3D network of the Hashtags and color coded based on the category to which they belong!
 
 * Users can also _search for a topic_ of their choice using the search bar or explore a certain category using the legend.
 On selecting one of the displayed categories, the user is redirected to a _dashboard for that specific “Category”_. This is full of useful features such as:
