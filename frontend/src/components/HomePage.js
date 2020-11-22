@@ -57,6 +57,7 @@ export function FocusGraph() {
     return (
     <div style={{overflowX: "hidden"}}>
     <Container>
+    <Badge style={{marginTop: "30px", width: "70rem"}} variant="dark">
       <Row>
         {/* <img src={logo} style={{width: '20%', height: '20%'}}/> */}
         <Col sm style={{height:'100%'}}>
@@ -79,11 +80,12 @@ export function FocusGraph() {
           </Badge>
         </Col>
       </Row>
+      </Badge>
     </Container>
   
   <br></br>
   <SearchPage></SearchPage>
-  <br/><br/>
+  <br/>
   <h4 style={{color:'white'}}><center><Badge variant="dark">Or choose one of the categories below to explore:</Badge></center></h4>
   <Row>
     <Col sm>
