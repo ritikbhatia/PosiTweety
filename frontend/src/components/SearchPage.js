@@ -22,7 +22,7 @@ export class SearchPage extends React.Component {
           <div class="d-flex justify-content-center h-100">
            <div class="searchbar">
              <input class="search_input" type="text" value={this.state.value} onChange={this.handleChange} placeholder="Enter topic here.." />
-             <Link to={"/dashboard?topic="+topic}><i class="fas fa-search"> Search Topic</i></Link>
+             <Link to={"/dashboard?topic="+topic} style={{fontFamily:"Roboto"}}><i class="fas fa-search"> Search Topic</i></Link>
            </div>
          </div>
       </Container>
