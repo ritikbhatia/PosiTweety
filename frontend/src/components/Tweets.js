@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tweet } from 'react-twitter-widgets';
-import { Spinner, Col, Row } from 'react-bootstrap';
+import { Spinner, Col, Row,Jumbotron,Badge } from 'react-bootstrap';
 import queryString from 'query-string';
 import { NavigationBar } from './Navigationbar';
 import { Resources } from './Resources';
@@ -65,6 +65,12 @@ export class Tweets extends React.Component {
                 </div>
                 <Row>
                   <Col xs={4}>
+                    <h1 style={{textAlign:'center'}}>
+                    <Badge variant="dark">
+                      Tweets
+                    </Badge>
+                    </h1>
+                    
                     <ul>
                       {tweets.map(item => (
                           <Tweet options={this.options} tweetId={item}/>
@@ -72,6 +78,11 @@ export class Tweets extends React.Component {
                     </ul>
                   </Col>
                   <Col xs={8}>
+                  <h1 style={{textAlign:'center'}}>
+                    <Badge variant="dark">
+                      Resources you may like
+                    </Badge>
+                    </h1>
                     <Resources topic={this.parameters.topic} />
                   </Col>
                 </Row>

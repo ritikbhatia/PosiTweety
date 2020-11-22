@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Row, Col, Container} from 'react-bootstrap';
+import { Card, Row, Col, Container,Badge} from 'react-bootstrap';
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import queryString from 'query-string';
 import { NavigationBar } from './Navigationbar';
@@ -60,9 +60,11 @@ export class About extends React.Component {
             </div>
             <Row>
               <Col className="about-col">
+              <h1 style={{textAlign:'center'}}><Badge variant="dark">Learn More, Help more!</Badge></h1>
             <Jumbotron>
             <Container>
-              <h1>Learn More, Help more!</h1>
+        <h1>About #{this.parameters.topic}</h1>
+              
               {about}
             </Container>
           </Jumbotron>
