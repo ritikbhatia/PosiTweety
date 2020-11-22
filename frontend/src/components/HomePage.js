@@ -10,7 +10,7 @@ import { SearchPage } from './SearchPage';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { Badge } from 'react-bootstrap';
 
 const styles = {
   listGroup: {
@@ -55,7 +55,7 @@ export function FocusGraph() {
     const openLink = (node) => history.push('/dashboard?topic='+node.id.substring(1))
 
     return (
-    <div style={{backgroundColor:"black", overflowX: "hidden"}}>
+    <div style={{overflowX: "hidden"}}>
     <Container>
       <Row>
         {/* <img src={logo} style={{width: '20%', height: '20%'}}/> */}
@@ -72,9 +72,11 @@ export function FocusGraph() {
           <br></br>
           <br></br>
           <br></br>
+          <Badge variant="dark">
           <h4 style={{color:'white'}}>Welcome to the <span style={{color:'#5f85db'}}>#SocialNetwork"</span> for good!</h4>
           <br/>
           <h6 style={{color:'white'}}><span style={{color:'green'}}>#Learn</span> more, spread <span style={{color:'red'}}>#Love</span> and do <span style={{color:'yellow'}}>#Good</span> with our hack!</h6>        
+          </Badge>
         </Col>
       </Row>
     </Container>
@@ -82,7 +84,7 @@ export function FocusGraph() {
   <br></br>
   <SearchPage></SearchPage>
   <br/><br/>
-  <h4 style={{color:'white'}}><center> Choose one of the categories below to explore:</center></h4>
+  <h4 style={{color:'white'}}><center><Badge variant="dark">Or choose one of the categories below to explore:</Badge></center></h4>
   <Row>
     <Col sm>
       <ListGroup style={styles.listGroup} horizontal>
@@ -131,7 +133,7 @@ export function FocusGraph() {
   </Row>
 
   <br/><br/>
-  <h4 style={{color:'white'}}><center>Or check out our <span style={{color:'#5f85db'}}>#Map</span> below:</center></h4>
+  <h4 style={{color:'white'}}><center><Badge variant="dark">Or check out our <span style={{color:'#5f85db'}}>#Map</span> below:</Badge></center></h4>
   <ForceGraph3D
     ref={fgRef}
     graphData={DATA}

@@ -12,12 +12,14 @@ import { NavigationBar } from './Navigationbar';
 const styles = {
     card: {
         overflow: "hidden",
+        backgroundColor: "#dcdcdc",
         borderRadius: 40,
     },
     cardImage: {
-        width: "250px",
+        width: "200px",
         margin: "auto",
-        height: "250px",
+        marginTop: "20px",
+        height: "200px",
         borderRadius: 55
     }
   }
@@ -104,7 +106,7 @@ export class Home extends React.Component {
                             <Card.Body>
                             <Card.Title>Resources</Card.Title>
                             <Card.Text>
-                                Want to contribute to the NGO that tweeted? Want to explore more links and videos about this topic? Don't fret cause our resources sections provides you with exactly this information!
+                                Want to contribute to the NGO that tweeted? Want to explore more links and videos about this topic? Don't fret cause our tweets and resources section provides you with exactly this information!
                             </Card.Text>
                             </Card.Body>
                             <Card.Footer>

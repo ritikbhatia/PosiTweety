@@ -1,9 +1,17 @@
 import React from 'react';
 import { Tweet } from 'react-twitter-widgets';
-import { Spinner, Col, Row,Jumbotron,Badge } from 'react-bootstrap';
+import { Spinner, Col, Row, Badge } from 'react-bootstrap';
 import queryString from 'query-string';
 import { NavigationBar } from './Navigationbar';
-import { Resources } from './Resources';
+
+import { ListGroup } from 'react-bootstrap';
+
+const styles = {
+  listGroup: {
+      overflow: "visible",
+      padding: "20px",
+  }
+}
 
 export class Tweets extends React.Component {
     constructor(props) {
@@ -21,7 +29,8 @@ export class Tweets extends React.Component {
       this.state = {
         error: null,
         isLoaded: true,
-        tweets: []
+        tweets: [],
+        resources: []
       };
     }
   
@@ -49,10 +58,34 @@ export class Tweets extends React.Component {
             });
           }
         )
+
+    fetch("http://localhost:5000/resources?topic="+this.parameters.topic,
+    {
+      headers : { 
+        'Accept': 'application/json'
+        }
+    })
+      .then(res => {
+        return res.json()})
+      .then(
+        (result) => {
+          console.log(result.resources)
+          this.setState({
+            isLoaded: true,
+            resources: result.resources
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
     }
   
     render() {
-      const { error, isLoaded, tweets } = this.state;
+      const { error, isLoaded, tweets, resources } = this.state;
       if (error) {
         return <div>Error: {error.message}</div>;
       } else if (!isLoaded) {
@@ -83,7 +116,16 @@ export class Tweets extends React.Component {
                       Resources you may like
                     </Badge>
                     </h1>
-                    <Resources topic={this.parameters.topic} />
+                    {/* <Resources topic={this.parameters.topic} /> */}
+                    <ListGroup className="h-100" style={styles.listGroup}>
+                      {resources.map(item => (
+                          <a href={item}>
+                            <ListGroup.Item action variant="success">
+                                {item}
+                            </ListGroup.Item>
+                          </a>
+                      ))}
+                  </ListGroup>
                   </Col>
                 </Row>
             </div>
