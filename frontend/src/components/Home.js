@@ -1,7 +1,10 @@
 import { Card, Row, Col} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import React from 'react';
-
+import info from '../assets/information.png';
+import media from '../assets/media.png';
+import news from '../assets/news.png';
+import resource from '../assets/resource.png';
 const styles = {
     card: {
         overflow: "hidden",
@@ -22,7 +25,7 @@ export class Home extends React.Component {
                 <Row className="m-5">
                     <Col>
                         <Card style={styles.card} >
-                            <Card.Img variant="top" style={styles.cardImage} src="https://upload.wikimedia.org/wikipedia/en/thumb/3/35/Information_icon.svg/1200px-Information_icon.svg.png" />
+                            <Card.Img variant="top" style={styles.cardImage} src={info} />
                             <Card.Body>
                             <Card.Title>About</Card.Title>
                             <Card.Text>
@@ -50,7 +53,7 @@ export class Home extends React.Component {
                     </Col>
                     <Col>
                         <Card style={styles.card}>
-                            <Card.Img variant="top" style={styles.cardImage} src="https://www.xda-developers.com/files/2015/07/nexusae0_Google-Photos-icon-logo.png" />
+                            <Card.Img variant="top" style={styles.cardImage} src={media} />
                             <Card.Body>
                             <Card.Title>Media</Card.Title>
                             <Card.Text>
@@ -66,7 +69,7 @@ export class Home extends React.Component {
                 <Row>
                     <Col>
                         <Card style={styles.card}>
-                            <Card.Img variant="top" style={styles.cardImage} src="https://image.flaticon.com/icons/png/512/21/21601.png" />
+                            <Card.Img variant="top" style={styles.cardImage} src={news} />
                             <Card.Body>
                             <Card.Title>News</Card.Title>
                             <Card.Text>
@@ -80,7 +83,7 @@ export class Home extends React.Component {
                     </Col>
                     <Col>
                         <Card style={styles.card}>
-                            <Card.Img variant="top" style={styles.cardImage} src="https://www.flaticon.com/svg/static/icons/svg/1271/1271847.svg" />
+                            <Card.Img variant="top" style={styles.cardImage} src={resource} />
                             <Card.Body>
                             <Card.Title>Resources</Card.Title>
                             <Card.Text>

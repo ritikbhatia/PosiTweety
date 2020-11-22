@@ -38,7 +38,7 @@ export function FocusGraph() {
     );
     }, [fgRef]);
     return (
-        <div style={{"backgroundColor":"black"}}>
+        <div style={{"backgroundColor":"#525252"}}>
        
 <Container>
         
@@ -66,7 +66,7 @@ export function FocusGraph() {
  
     </Container>
     <br></br>
-    <SearchPage></SearchPage>
+    {/* <SearchPage></SearchPage> */}
     
     <ForceGraph3D
     ref={fgRef}
