@@ -8,7 +8,6 @@ import { About } from './components/About';
 import { Media } from './components/Media';
 import { News } from './components/News';
 import { Home } from './components/Home';
-import { Resources } from './components/Resources'
 import { Tweets } from './components/Tweets'
 import Particles from 'react-particles-js';
 
@@ -43,28 +42,12 @@ class App extends Component {
                 <Route exact path='/dashboard/about' component={About} />
                 <Route exact path='/dashboard/media' component={Media} />
                 <Route exact path='/dashboard/news' component={News} />
-                <Route exact path='/dashboard/resources' component={Resources} />
+                <Route exact path='/dashboard/resources' component={Tweets} />
             </Switch>
           </div>
         </React.Fragment>
     );
   }
 }
-
-
-// import './App.css';
-// import React from 'react';
-// import { BrowserRouter } from 'react-router-dom';
-// import { Dashboard } from './components/Dashboard';
-
-// function App() {
-//   return (
-//     <React.Fragment>
-//       <BrowserRouter>
-//         <Dashboard />
-//       </BrowserRouter>
-//     </React.Fragment>
-//   );
-// }
 
 export default App;

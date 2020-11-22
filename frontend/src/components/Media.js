@@ -2,6 +2,7 @@ import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import queryString from 'query-string';
 import { NavigationBar } from './Navigationbar';
+import { Badge, Carousel } from 'react-bootstrap';
 
 export class Media extends React.Component {
     constructor(props) {
@@ -45,22 +46,22 @@ export class Media extends React.Component {
       if (error) {
         return <div>Error: {error.message}</div>;
       } else if (!isLoaded) {
-        return <div><Spinner animation="border" variant="primary" style={{left: '50%', top: '50%', position:'absolute'}} />.</div>;
+        return <Spinner animation="border" variant="primary" style={{left: '50%', top: '50%', position:'absolute'}} />;
       } else {
         return (
             <div>
                 <div>
                   <NavigationBar topic={this.parameters.topic} />
                 </div>
-                <ul>
-                  {image_urls.map(item => (
-                      <div>
-                          <img src={item} height="500px" width="500px"  />
-                          <br/><br/>
-                      </div>
-                  ))}
-                </ul>
-            </div>
+                  <h1><center><Badge variant="dark"><span style={{color:'white'}}>Media</span></Badge></center></h1>
+                  <Carousel>
+                    {image_urls.map(item => (
+                        <Carousel.Item>
+                            <center><img src={item} height="500px" width="600px" style={{padding: "30px"}}  /></center>
+                        </Carousel.Item>
+                    ))}
+                  </Carousel>
+                </div>
         );
       }
     }

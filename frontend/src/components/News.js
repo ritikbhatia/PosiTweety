@@ -1,6 +1,6 @@
 import React from "react";
-import { List, Grid, Container, Header, Image } from "semantic-ui-react";
-import {Card,Button}from 'react-bootstrap';
+import { List, Grid, Container } from "semantic-ui-react";
+import { Badge, Card, Button }from 'react-bootstrap';
 import queryString from 'query-string';
 import { NavigationBar } from './Navigationbar';
 
@@ -14,7 +14,7 @@ const styles = {
       width: "250px",
       margin: "auto",
       height: "250px",
-      borderRadius: 55
+      borderRadius: 55,
   }
 }
 
@@ -29,19 +29,18 @@ const ArticleItem = props => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-start"
-          }}
-        >
-        <Card style={styles.card}>
-  <Card.Img variant="top" src={article.urlToImage} />
-  <Card.Body>
-    <Card.Title>{article.title}</Card.Title>
-    <Card.Text>
-    {article.description}
-    </Card.Text>
-    <Button variant="secondary" on> <center>Go to <Card.Link to={article.url}>{article.source.name}</Card.Link></center></Button>
-  </Card.Body>
-</Card>
-</Grid.Column>
+          }}>
+          <Card style={styles.card}>
+            <Card.Img variant="top" src={article.urlToImage} />
+            <Card.Body>
+              <Card.Title>{article.title}</Card.Title>
+              <Card.Text>
+              {article.description}
+              </Card.Text>
+              <Button variant="secondary" on> <center>Go to <Card.Link to={article.url}>{article.source.name}</Card.Link></center></Button>
+            </Card.Body>
+          </Card>
+        </Grid.Column>
       </Grid>
     </List.Item>
   );
@@ -104,9 +103,7 @@ export class News extends React.Component {
             <p style={{ textAlign: "center" }}>Searching for articles...</p>
           )}
           {articles.length > 0 && (
-            <Header as="h4" style={{ textAlign: "center", margin: 20 }}>
-              Found {totalResults} articles on "{searchTopic}"
-            </Header>
+            <h1><center><Badge variant="dark"><span style={{color:'white'}}>News</span></Badge></center></h1>
           )}
           {articles.length > 0 && <ArticleList articles={articles} />}
           {apiError && <p>Could not fetch any articles. Please try again.</p>}
