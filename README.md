@@ -2,7 +2,7 @@
 
 ## Demo
 
-Check out the following links to access our devpost submission and the projecr demo:
+Check out the following links to access our devpost submission and the project demo:
 
 * [Devpost submission](https://devpost.com/software/positweety)
 * [YouTube Demo](https://www.youtube.com/watch?v=F9el0lAAWRY)
