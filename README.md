@@ -1,5 +1,12 @@
 # PosiTweety
 
+## Demo
+
+Check out the following links to access our devpost submission and the projecr demo:
+
+* [Devpost submission](https://devpost.com/software/positweety)
+* [YouTube Demo](https://www.youtube.com/watch?v=F9el0lAAWRY)
+
 ## Inspiration
 
 Hiya PosiTweeps! **We would like our app, _PosiTweety_ to take part in the “Hack for Good” category** and here is our inspiration as to why. 
@@ -54,6 +61,24 @@ PosiTweety has a _Flask backend_, which interacts with the twitter API and runs 
 
 The _frontend_ for PosiTweety was built on _React_, allowing for rapid development and scaling for our hack. This allowed to create beautiful animations like the **#Map**, powerful visualizations like those on the **Category Dashboard** and make an overall engaging frontend. 
 
+## Installation and running
+
+Its super simple to install and run the project.
+
+Clone the repository, cd into the project and run the following commands:
+
+* pip install -r requirements.txt
+* cd frontend
+* npm i
+
+This should install all the dependencies required for the project.
+
+In order to run the project, cd into PosiTweety and run the foloowing commands:
+
+* flask run
+* npm start
+
+You should now be able to access PosiTweety on your localhost.
 
 
 ## Challenges we ran into
